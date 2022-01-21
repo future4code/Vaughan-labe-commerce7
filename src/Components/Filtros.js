@@ -4,39 +4,46 @@ import React from "react";
 const Conteiner = styled.div`
   display: flex;
   flex-direction: column;
+  border: 1px solid black;
+  padding: 10px;
 `;
-const ConteinerInput = styled.input`
+
+const ConteinerInput = styled.label`
  display: flex;
  flex-direction: column;
  align-items: flex-start;
- margin-b;
- `
+ `;
 
 export default class Filtros extends React.Component {
   render() {
-    return (
-    <Conteiner>
+    return <Conteiner>
       <h3> Filtros </h3>
-      <ConteinerInput
-        //MinimoValor
-        type="number"
-        value={this.props.minFiltro}
-        onChange={this.props.onChangeMin}
-        />
-      <ConteinerInput
-        //MáximoValor
-        
-        type="number"
-        value={this.props.maxFiltro}
-        onChange={this.props.onChangeMax}
-        />
-      <ConteinerInput
-        //BuscaNome
-        type="number"
-        value={this.props.nameFiltro}
-        onChange={this.props.onChangename}
-        />
+      <div>
+        <ConteinerInput>
+          Valor mínimo:
+          <input
+            type="number"
+            value={this.props.minFiltro}
+            onChange={this.props.minFiltro}
+          />
+        </ConteinerInput>
+        <ConteinerInput>
+          Valor máximo:
+          <input
+            type="number"
+            value={this.props.maxFiltro}
+            onChange={this.props.onChangeMax}
+          />
+        </ConteinerInput>
+        <ConteinerInput>
+          Busca:
+          <input
+            type="number"
+            value={this.props.nameFiltro}
+            onChange={this.props.onChangename}
+          />
+        </ConteinerInput>
+      </div>
     </Conteiner>
-    )
   }
 }
