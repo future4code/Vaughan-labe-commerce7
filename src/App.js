@@ -63,15 +63,17 @@ class App extends React.Component{
     productsInCart: [
       {
         id: 6,
-        name: "Foguete da Missão Apollo 11",
-        value: 10000.0,
-        imageUrl: "https://picsum.photos/1/200",
+        name: "Como estudar e aprender",
+        value: 210.0,
+       // imageUrl: img6,
       }
     ]
 
   }
 
   render () {
+
+
     return (
       <ConteinerApp>
         <Filtros
