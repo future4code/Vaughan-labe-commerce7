@@ -4,6 +4,7 @@ import CardProdutos from "./CardProdutos";
 
 const ConteinerProdutos = styled.div`
     border: 1px solid black;
+
 `;
 const Opcoes = styled.div`
     display: flex;
@@ -15,7 +16,7 @@ const JanelaDeProdutos = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
     padding: 10px;
-`
+`;
 
 export default class Produtos extends React.Component {
     render (){
@@ -31,12 +32,10 @@ export default class Produtos extends React.Component {
                 </label>
             </Opcoes>
             <JanelaDeProdutos>
-                <CardProdutos/>
-                <CardProdutos/>
-                <CardProdutos/>
-                <CardProdutos/>
-                <CardProdutos/>
-                <CardProdutos/>
+                {this.props.produto.map((produto) =>  {
+                    return <CardProdutos produto={produto}/>
+                })}
+                
             </JanelaDeProdutos>
             
             
