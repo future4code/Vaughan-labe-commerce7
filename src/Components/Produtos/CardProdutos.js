@@ -1,12 +1,17 @@
 import React from "react";
 import styled from "styled-components";
+import Produtos from "./Produtos";
 
 
 const ConteinerCard = styled.div`
     border: 1px solid black;
     display: flex;
     flex-direction: column;
-    
+    width: 250px;   
+    border-radius: 10px;  
+    padding: 10px;   
+    font-size: 18px;   
+    text-align: center;
 `;
 const Descrição = styled.div`
     display: flex;
@@ -19,11 +24,12 @@ const Descrição = styled.div`
 
 export default class CardProdutos extends React.Component {
     render (){
+        const produto = this.props.produto
         return <ConteinerCard>
-            <img src="https://picsum.photos/100/100" alt="Produtos"/>
+            <img src={produto.foto} alt="Produtos"/>
             <Descrição>
-                <p>Produto</p>
-                <p>R$ 1Milhão</p>
+                <p>{produto.nome}</p>
+                <p>R${produto.preco},00</p>
                 <button>Comprar</button>
             </Descrição>
         </ConteinerCard>
